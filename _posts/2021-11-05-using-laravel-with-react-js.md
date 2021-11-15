@@ -1,5 +1,5 @@
 ---
-title: "Laravel Service Container and Service Providers Explained"
+title: "Creating a Modern Application: Using Laravel With React.js"
 date: 2021-11-05T00:00:00-00:00
 canonical_url: "https://adevait.com/laravel/using-laravel-with-react-js"
 link: "https://adevait.com/laravel/using-laravel-with-react-js"
