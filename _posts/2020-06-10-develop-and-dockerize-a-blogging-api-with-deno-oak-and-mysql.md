@@ -842,7 +842,7 @@ await app.listen({ port: 3000 });
 
 Nothing much has changed except the importing of `auth` routes at __line 8__ and registration of them in the app instance at __line 29__.
 
-## Testing with Postman
+## Testing with Postman (Again)
 
 Again it's time to test out our authentication routes. Restart the application by hitting `control + c` and running `docker-compose up` command.
 
