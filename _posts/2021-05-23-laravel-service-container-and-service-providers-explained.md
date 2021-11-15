@@ -2,12 +2,10 @@
 title: "Laravel Service Container and Service Providers Explained"
 date: 2021-05-23T00:00:00-00:00
 categories:
-  - laravel
+  - tutorial
 tags:
   - php
   - laravel
-  - webdev
-  - tutorial
 ---
 
 Laravel's service container is one of the most important pieces of the framework yet it gets so little attention from a lot of developers. Being interviewed a large number of candidates, I've realized that there are two main reasons behind this ignorance.
