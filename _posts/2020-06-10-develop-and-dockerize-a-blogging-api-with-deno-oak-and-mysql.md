@@ -30,9 +30,7 @@ This isn’t going to be an introduction to Deno either. If you’re looking for
 
 ## Source Code
 
-Source code for this tutorial can be found in the [__simplified-tutorial-version__](https://github.com/fhsinchy/deno-blog/tree/simplified-tutorial-version) branch of following repository:
-
-{% github fhsinchy/deno-blog no-readme %}
+Source code for this tutorial can be found in the [__simplified-tutorial-version__](https://github.com/fhsinchy/deno-blog/tree/simplified-tutorial-version) branch of the [fhsinchy/deno-blog](https://github.com/fhsinchy/deno-blog) repository.
 
 ---
 

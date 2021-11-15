@@ -25,7 +25,7 @@ If you want to learn more about this architecture, you may read this [blog](http
 
 After looking for a boilerplate that suits me and building few APIs myself, I've finally come up with a rock solid architecture that in my opinion strikes the right balance between features, best-practices and simplicity.
 
-{% github fhsinchy/express-mongo-api-boilerplate %}
+> [fhsinchy/express-mongo-api-boilerplate](https://github.com/fhsinchy/express-mongo-api-boilerplate)
 
 In this article I'll discuss the goods, bads and uglies of express application architecture as well as how I came up with this architecture, why I think this is good and how you can use or extend this project for your needs.
 

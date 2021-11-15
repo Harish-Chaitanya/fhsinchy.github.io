@@ -31,7 +31,7 @@ Don't get me wrong. It's a no brainer that controllers go inside the `controller
 
 You can find an implementation of the service discussed in this article in the following repository:
 
-{% github fhsinchy/laravel-livewire-shopping-cart no-readme %}
+> [fhsinchy/laravel-livewire-shopping-cart](https://github.com/fhsinchy/laravel-livewire-shopping-cart)
 
 Apart from Laravel, the project makes use of [Livewire](https://laravel-livewire.com/) and [TailwindCSS](https://tailwindcss.com/).
 
