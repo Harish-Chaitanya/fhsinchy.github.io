@@ -920,7 +920,7 @@ Adding the access token required from login route as bearer token however lets u
 
 The source code in the [__master__](https://github.com/fhsinchy/deno-blog) branch is a bit more complicated, with __deps.ts__ convention, versioned module URLs, better abstraction things like that:
 
-{% github fhsinchy/deno-blog no-readme %}
+> [fhsinchy/deno-blog](https://github.com/fhsinchy/deno-blog)
 
 Code in the [__master__](https://github.com/fhsinchy/deno-blog) branch is often subjected to change whereas the [__simplified-tutorial-version__](https://github.com/fhsinchy/deno-blog/tree/simplified-tutorial-version) branch is almost frozen unless there are any breaking issues. Now that you have a somewhat good understanding of how things work, you are free to explore the master branch as well.
 
