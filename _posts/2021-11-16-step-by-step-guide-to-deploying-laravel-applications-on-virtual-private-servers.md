@@ -1,6 +1,6 @@
 ---
 title: "Step-By-Step Guide to Deploying Laravel Applications on Virtual Private Servers"
-date: 2021-11-05T00:00:00-00:00
+date: 2021-11-16T00:00:00-00:00
 canonical_url: "https://adevait.com/laravel/deploying-laravel-applications-virtual-private-servers"
 link: "https://adevait.com/laravel/deploying-laravel-applications-virtual-private-servers"
 categories:
