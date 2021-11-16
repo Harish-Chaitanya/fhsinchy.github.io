@@ -1,5 +1,5 @@
 ---
-title: "Creating a Modern Application: Using Laravel With React.js"
+title: "Step-By-Step Guide to Deploying Laravel Applications on Virtual Private Servers"
 date: 2021-11-05T00:00:00-00:00
 canonical_url: "https://adevait.com/laravel/deploying-laravel-applications-virtual-private-servers"
 link: "https://adevait.com/laravel/deploying-laravel-applications-virtual-private-servers"
@@ -35,7 +35,7 @@ The article assumes that you have previous experience with working with the Linu
 
 I've built a dummy project for this article. It's a simple question board application where users can post a question, and others can answer that question. You can consider this a dumbed-down version of StackOverflow.
 
-![Example application](assets/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-1.jpeg)
+![Example application](assets/images/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-1.jpeg)
 
 The project source code is available on [https://github.com/fhsinchy/guide-to-deploying-laravel-on-vps](https://github.com/fhsinchy/guide-to-deploying-laravel-on-vps) repository. Make a fork of this repository and clone it on your local computer.
 
@@ -45,9 +45,9 @@ Once you have a copy of the project on your computer, you're ready to start the 
 
 There are several VPS providers out there, such as DigitalOcean, Vultr, Linode, and Hetzner. Although working with an unmanaged VPS is more or less the same across providers, they don't provide the same kind of services.
 
-DigitalOcean, for example, provides managed database services. Linode and Vultr, on the other hand, don't have such services. You don't have to worry about these differences. 
+DigitalOcean, for example, provides managed database services. Linode and Vultr, on the other hand, don't have such services. You don't have to worry about these differences.
 
-I'll demonstrate only the unmanaged way of doing things. So regardless of the provider, you're using, the steps should be identical. 
+I'll demonstrate only the unmanaged way of doing things. So regardless of the provider, you're using, the steps should be identical.
 
 Before provisioning a new server, you’ll have to generate SSH keys.
 
@@ -105,7 +105,7 @@ usermod -aG sudo nonroot
 
 In this command, `sudo` is the group name, and `nonroot` is the username. Now, if you try to log into this account, you'll face a permission denied error.
 
-![SSH into the server](assets/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-2.png)
+![SSH into the server](assets/images/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-2.png)
 
 It happens because most of the VPS providers disable login using a password when you add an SSH key to the server, and you haven't configured the new user to use SSH key-pairs. One easy way to fix this is to copy the content of `/root/.ssh` directory to the `/home/nonroot/.ssh` directory. You can use the `rsync` program to do this.
 
@@ -123,7 +123,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
 
 Downloading and installing the updates will take a few minutes. During this process, if you see a screen titled `Configuring openssh-server` asking about some file changes, select the `keep the local version currently installed` option and press enter.
 
-![Configuring openssh-server](assets/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-3.png)
+![Configuring openssh-server](assets/images/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-3.png)
 
 After the update process finishes, reboot the server by executing the `sudo` reboot command. Wait a few minutes for the server to boot again and log back in as a non-root user.
 
@@ -360,11 +360,11 @@ sudo systemctl status nginx
 
 You should see something as follows in the output:
 
-![NGINX service status](assets/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-4.png)
+![NGINX service status](assets/images/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-4.png)
 
 You can regain control of the terminal by hitting q on your keyboard. Now that NGINX is running, you should see the default welcome page of NGINX if you visit the server IP address.
 
-![Welcome to NGINX](assets/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-5.png)
+![Welcome to NGINX](assets/images/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-5.png)
 
 You'll have to change the NGINX configuration to serve your Laravel application instead. To do so, create a new file `/etc/nginx/sites-available/question-board` and open the file using the nano text editor.
 
@@ -438,7 +438,7 @@ sudo nginx -s reload
 
 If you visit your server IP address, you'll see that NGINX is serving your application correctly but the application is throwing a 500 internal server error.
 
-![500 internal server error](assets/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-6.png)
+![500 internal server error](assets/images/2021-11-16-step-by-step-guide-to-deploying-laravel-applications-on-virtual-private-servers/deploying-laravel-6.png)
 
 As you can see, the application is trying to write to the logs folder but fails. It happens because the `root` user owns the `/srv/question-board` directory, and the `www-data` user owns the NGINX process. To make the `/srv/question-board/storage` directory writable by the application, you'll have to alter the directory permissions.
 
